@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+
+        <!-- 
+        
+        AES.THEME IV
+        Versión 0.9 R21a
+        Iniciado el 22.05.19
+        Última edición 31.10.19
+        --- x ---
+        Diseñado por David Pino
+        @aesthezel - o - @aes.thezel
+        --- x ---
+        Componentes
+        Semantic UI 2.4.2       | semantic-ui.com
+        Font Awesome 4.7.0      | fontawesome.com
+        
+        -->
+
+    <html lang="es"> 
+        <head>
+            <title>{Title}</title>
+
+            <link rel="shortcut icon" href="{Favicon}">
+            <link rel="alternate" type="application/rss+xml" href="{RSS}">
+            {block:Description}<meta name="description" content="{MetaDescription}" />{/block:Description} 
+            <link href='https://fonts.googleapis.com/css?family=Pinyon+Script' rel='stylesheet' type='text/css'>
+            <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+
+            <!-- /?\ Standard META -->
+            <meta charset="utf-8" />
+            <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+            <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+            <!-- /?\ Tumblr META -->
+            <meta name="color:background" content="#ffffff"/>
+            <meta name="color:title" content="#e5faff" />
+            <meta name="color:desc" content="#ccf5ff" /> 
+            <meta name="color:text" content="#999"/>
+            <meta name="color:link hover" content="#ddd"/>
+            <meta name="color:link" content="#aaa"/>
+            <meta name="text:banner url" content="#">
+            <meta name="text:logo url" content="#">
+            <meta name="text:link1" content="">
+            <meta name="text:link1 url" content="/">
+            <meta name="text:link2" content="">
+            <meta name="text:link2 url" content="/">
+            <meta name="text:link3" content="">
+            <meta name="text:link3 url" content="/">
+
+            <!-- /?\ Estructura -->
+            <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.css">
+            <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/components/reset.css">
+            <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/components/site.css">
+            <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/components/grid.css">
+            <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/components/loader.css">
+            <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/components/menu.css">
+            <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/components/input.css">
+            <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/components/dropdown.css">
+            <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/components/icon.css">
+            <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/components/button.css">
+            <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/components/transition.css">
+            <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/components/popup.css">
+            <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/components/dimmer.css">
+            <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/components/rail.css">
+            <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/components/sticky.css">
+        
+            <!-- /?\ Style -->
+            <style type="text/css">
+                body, html {
+                    background:{color:background};
+                    margin:0px;
+                    color:{color:text};
+                    scroll-behavior: smooth;
+                    }   
+                a {
+                    text-decoration:none;
+                    outline:0px;
+                    -moz-outline-style:none;
+                    color:{color:link};
+                    -moz-transition-duration:0.5s;
+                    -webkit-transition-duration:0.5s;
+                    -o-transition-duration:0.5s;
+                    }
+                    a:hover{
+                        color:{color:link hover};
+                        font-style:none;
+                        -moz-transition-duration:0.5s;
+                        -webkit-transition-duration:0.5s;
+                        -o-transition-duration:0.5s;
+                    }
+                img {
+                    border:0px;
+                    }
+                blockquote {
+                    padding-left:5px;
+                    border-left:2px solid;
+                    }
+                    blockquote blockquote {
+                        padding-left:5px;
+                        border-left:2px solid;
+                        }
+                #bannerhead {
+                    min-height: 300px;
+                    padding: 1em 0em;
+                    position: relative;
+                    overflow: hidden;
+                    color: rgba(0, 0, 0, 0.5);
+                    background: linear-gradient(
+                    rgba(102, 225, 255, 0.3),
+                    rgba(0, 0, 0, 1)
+                    ), url('{text:banner url}') no-repeat;
+                    background-size: cover;   
+                    -webkit-transform: translate3d(6, 6, 6);
+                    transform: translate3d(3, 3, 3);
+                    z-index: 0;
+                    }
+                    #particles-js {
+                      position: absolute;
+                      top: 0;
+                      right: 0;
+                      bottom: 0;
+                      left: 0;
+                      z-index: 0;
+                      height: 320px;
+                    }
+                    #overbanner {
+                      position: relative;
+                      z-index: 32;
+                    }
+                    .gradient::after {
+                        position: absolute;
+                        top:0;
+                        left: 0;
+                        right: 0;
+                        bottom: 0;
+                        content: '';
+                        display: block;
+                        background-image: linear-gradient(to right, currentColor 0%, transparent 66%);
+                      }
+                    .gradient::before {
+                        position: absolute;
+                        top:0;
+                        left: 0;
+                        right: 0;
+                        bottom: 0;
+                        content: '';
+                        display: block;
+                        background-image: linear-gradient(to left, currentColor 0%, transparent 66%);
+                      }
+                    .banner .segment{
+                        position: relative;
+                        min-height: 200px;
+                        height: 300px;
+                        padding: 1em 0em;
+                        }
+                    h1.ui.header {
+                      color: {color:title};
+                      padding-top: 3.33em;
+                      margin-top: 5em;
+                      margin-bottom: -0.2em;
+                      font-size: 3em;
+                      font-weight: normal;
+                    }
+                    .sub.header {
+                      color: {color:desc};
+                      padding-top: 0em;
+                      margin-bottom: 1em;
+                      font-size: 1em;
+                      font-weight: normal;
+                    }
+                .main.container {
+                    margin-top: 2em;
+                    }
+                .main.menu {
+                    margin-top: 1em;
+                    border-radius: 0;
+                    border: none;
+                    box-shadow: none;
+                    transition:
+                      box-shadow 0.7s ease,
+                      padding 0.5s ease;
+                        }   
+                    .main.menu .mcolor.commit { /* Verde claro #4ee49e, Verde medio #1dbf73, Verde oscuro #148550 */
+                    background-image: -webkit-linear-gradient(left, #4ee49e, #1dbf73,  #148550);
+                    background-image:    -moz-linear-gradient(left, #4ee49e, #1dbf73,  #148550);
+                    background-image:     -ms-linear-gradient(left, #4ee49e, #1dbf73,  #148550);
+                    background-image:      -o-linear-gradient(left, #4ee49e, #1dbf73,  #148550);
+                    background-image:     linear-gradient(to right, #4ee49e, #1dbf73,  #148550);
+                    color:transparent;
+                    -webkit-background-clip: text;
+                    background-clip: text;
+                    font-weight: bold;
+                        }
+                    .main.menu .mcolor.commit .icon {
+                    margin-left: 0.21em;
+                        }
+                    .main.menu .item img.logo {
+                    margin-right: 0.33em;
+                        }
+                .overlay {
+                    float: left;
+                    padding-top: 3.33em;
+                    margin: 0em 3em 1em 0em;
+                    }
+                .overlay .menu {
+                    position: relative;
+                    left: 0;
+                    transition: left 0.7s ease;
+                    }
+                .main.menu.fixed {
+                    background-color: #FFFFFF;
+                    border: 1px solid #DDD;
+                    box-shadow: 0px 5px 6px rgba(0, 0, 0, 0.3);
+                    }
+                .overlay.fixed .menu {
+                    left: 777px;
+                    }
+                .ui.footer.segment {
+                    margin: 5em 0em 0em;
+                    padding: 5em 0em;
+                    }
+                {CustomCSS}
+            </style>
+        </head>
+
+        <body>
+                <div id="bannerhead" class="gradient">
+                    <div id="particles-js"></div>
+                    <div id="overbanner">
+                      <div class="ui basic banner segment">
+                        <div class="ui main text container">
+                        <h1 class="ui header">
+                         <content>{Title}</content>
+                        </h1>
+                        <div class="sub header">{Description}</div>
+                        </div>
+                      </div>
+                    </div>
+                      
+                </div>
+
+
+            <!-- /?\ Menú principal -->
+            <div class="ui borderless main menu">
+                <div class="ui text container">
+                  <div class="item">
+                    <img class="logo" src="{text:logo url}">
+                  </div>
+                  <a href="#blog" class="item">Blog</a>
+                  <a href="https://www.fiverr.com/aesthezel" class="item mcolor commit">Comisiones <i class="paint brush icon"></i></a>
+                  <a href="#" class="ui right floated dropdown item">
+                    Contáctame <i class="dropdown icon"></i>
+                    <div class="menu">
+                      <div class="item"><i class="telegram icon"></i> Telegram</div>
+                      <div class="item"><i class="discord icon"></i> Discord</div>
+                      <div class="divider"></div>
+                      <div class="header">Redes sociales</div>
+                          <div class="item"><i class="facebook icon"></i> Facebook</div>
+                          <div class="item"><i class="twitter icon"></i> Twitter</div>
+                          <div class="item"><i class="instagram icon"></i> Instagram</div>
+                      </div>
+                    </div>
+                  </a>
+            </div>
+
+            <div id="blog" class="ui text container">
+            
+                    <div class="overlay">
+                      <div class="ui labeled icon vertical menu">
+                        {block:Pagination}
+                            {block:NextPage}
+                                <a href="{NextPage}" class="item"><i class="arrow alternate circle right icon"></i> Explorar</a>
+                            {/block:NextPage}
+                            {block:PreviousPage}
+                                <a href="{PreviousPage}" class="item"><i class="arrow alternate circle left icon"></i> Regresar</a>
+                            {/block:PreviousPage}
+                        {/block:Pagination}
+                        <a href="#bannerhead" class="item"><i class="arrow alternate circle up icon"></i> Subir</a>
+                      </div>
+                    </div>
+            
+                    <div>
+                            {block:Posts inlineMediaWidth="700"}
+                                <div class="ui vertical segment">
+                                    <br>
+                                    <br>
+                                    <br>
+
+                                    {block:Text}
+                                        {block:Title}
+                                        <h2>{Title}</h2>
+                                        {/block:Title}
+                                        {Body}
+                                    {/block:Text}
+                            
+                                    {block:Quote}
+                                        <h2>“{Quote}”</h2>
+                                        <h1>{Source}</h1>
+                                    {/block:Quote}
+                             
+                                    {block:Link}
+                                        <a href="{URL}">
+                                            <h2>{Name}</h2>
+                                        </a>
+                                        {block:Description}
+                                            <p>{Description}</p>
+                                        {/block:Description}
+                                    {/block:Link}
+                             
+                                    {block:Photo}
+                                        <center>
+                                            <img src="{PhotoURL-400}"/>
+                                        </center>
+                                        {block:Caption}
+                                        {/block:Caption}
+                                    {/block:Photo}
+                             
+                                    {block:Photoset}
+                                        <center>{Photoset-400}</center>
+                                        {block:Caption}
+                                        {/block:Caption}
+                                    {/block:Photoset}
+                             
+                                    {block:Chat}
+                                        <ul>
+                                            {block:Title}
+                                                <h2>{Title}</h2>
+                                            {/block:Title}
+                                            {block:Lines}
+                                                <li>
+                                                {block:Label}
+                                                    <span>{Label}</span>
+                                                {/block:Label}
+                                                &nbsp;{Line}
+                                                </li>
+                                            {/block:Lines}
+                                        </ul>
+                                    {/block:Chat}
+                             
+                                    {block:Video}
+                                    {Video-500}
+                                    {block:Caption}
+                                    {/block:Caption}
+                                    {/block:Video}
+                             
+                                    {block:Answer}
+                                        <div>
+                                            {Asker} inquired: </br>
+                                            {Question}
+                                        </div>
+                                        <div>
+                                            {Answer}
+                                        </div>
+                                    {/block:answer}
+                             
+                             
+                             
+                                    {block:Audio}
+                                        <div>
+                                            <div>
+                                                {block:TrackName}
+                                                    <b>Title:</b> {TrackName}<br />
+                                                {/block:TrackName}
+                                                {block:Artist}
+                                                    <b>Artist:</b> {Artist}<br />
+                                                {/block:Artist}
+                                                {/block:ExternalAudio}
+                                                <b>Listened:</b> {PlayCount} times
+                                            </div>
+                                                <br>
+                                            <div>
+                                                {AudioPlayerWhite}
+                                            </div>
+                                        </div>
+                                        {block:Caption}
+                                        {/block:Caption}
+                                        <br>
+                                    {/block:Audio}
+                             
+                                        <div>
+                                            {block:Date}<a href="{Permalink}"><a href="{Permalink}">{DayofMonth} de {ShortMonth}</a> con <a href="{Permalink}">{NoteCountWithLabel}</a> {/block:Date} {block:RebloggedFrom} <a href="{ReblogParentURL}" title="{ReblogParentName}">via</a>
+                                         
+                                            {block:ContentSource}& <a href="{SourceURL}" title="{ReblogRootName}">creditos</a>{/block:ContentSource}{/block:RebloggedFrom}
+                                         
+                                            {block:HasTags}<div>#{block:Tags} <a href="{TagURL}">{Tag}</a>, {/block:Tags}</div>{/block:HasTags}</div>
+                                        </div>
+                                     
+                                    {block:PostNotes}
+                                        <div>{PostNotes}</div>
+                                    {/block:PostNotes}
+
+                                    {/block:Posts}
+                                                </div>
+                                            </div>
+
+
+                                    </div>
+
+                            </div>
+                        </div>
+
+                        <div class="ui basic center aligned segment">
+                            {block:Pagination}
+                                <h4 class="ui header">Página</h4>
+                                <div class="ui inverted pagination menu">
+                                    {block:PreviousPage}
+                                    <a href="{PreviousPage}" class="inverted active item">
+                                        <i class="arrow left icon"></i>
+                                    </a>
+                                    {/block:PreviousPage}
+                                    <div class="inverted item">
+                                        {CurrentPage}
+                                    </div>
+                                    <div class="inverted item">
+                                        de
+                                    </div>
+                                    <div class="inverted item">
+                                        {TotalPages}
+                                    </div>
+                                    {block:NextPage}
+                                    <a href="{NextPage}" class="inverted active item">
+                                        <i class="arrow right icon"></i>
+                                    </a>
+                                    {/block:NextPage}
+                                </div>
+                            {/block:Pagination}
+                        </div>
+
+
+            <div>
+
+            <!-- /?\ Pie de página -->
+            <div class="ui inverted vertical footer segment">
+                <div class="ui center aligned container">
+              <div class="ui stackable inverted divided grid">
+                <div class="three wide column">
+                  <h4 class="ui inverted header">Contacto</h4>
+                  <div class="ui inverted link list">
+                    <a href="#" class="item">Facebook</a>
+                    <a href="#" class="item">Twitter</a>
+                    <a href="#" class="item">LinkedIn</a>
+                    <a href="#" class="item">Fiverr</a>
+                    <a href="#" class="item">Telegram</a>
+                  </div>
+                </div>
+                <div class="three wide column">
+                  <h4 class="ui inverted header">Páginas</h4>
+                  <div class="ui inverted link list">
+                    <a href="#" class="item">Próximamente</a>
+                  </div>
+                </div>
+                <div class="three wide column">
+                  <h4 class="ui inverted header">Aliados</h4>
+                  <div class="ui inverted link list">
+                    <a href="#" class="item">Studio Pineseed</a>
+                    <a href="#" class="item">Quasar Projects</a>
+                  </div>
+                </div>
+                <div class="seven wide column">
+                  <h4 class="ui inverted header">Galería</h4>
+                  <p>En construcción</p>
+                </div>
+              </div>
+              <div class="ui inverted section divider"></div>
+              <img src="{PortraitURL-128}" class="ui centered mini image">
+              <h5 class="ui inverted header">
+              <content>2012-2019, Aesthezel's Site</content>
+              <div class="sub header">
+              Derechos reservados del sitio a David Pino.</br>
+              Puede que este sitio contenga contenido de terceros.
+            
+              </div>
+              </h5>
+              <div class="ui horizontal inverted small divided link list">
+                <a class="item" href="#">Archivo</a>
+                <a class="item" href="#">RSS</a>
+                <a class="item" href="#">Terminos & Condiciones</a>
+                <a class="item" href="#">Política de Privacidad</a>
+              </div>
+            </div>
+          </div>
+
+            <!-- /?\ Scripts -->
+            <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha384-tsQFqpEReu7ZLhBV2VZlAu7zcOV+rXbYlF2cqB8txI/8aZajjp4Bqd+V6D5IgvKT" crossorigin="anonymous"></script>
+            <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.js"></script>
+            <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/components/dropdown.js"></script>
+            <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/components/transition.js"></script>
+            <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/components/popup.js"></script>
+            <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/components/visibility.js"></script>
+            <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/components/dimmer.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/components/sticky.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.js"></script>
+            <!-- /?\ Scripts personalizados -->
+            <script> // Partículas
+                particlesJS.load('particles-js', 'https://static.tumblr.com/qzhu9m0/rtgq08uy8/particlesjs-config.json', function() {
+                console.log('AESnator :: Se han iniciado las particulas');
+                });
+            </script>
+            <script> // Menú
+              $(document)
+                .ready(function() {
+                  $('.main.menu').visibility({
+                    type: 'fixed'
+                  });
+                  $('.overlay').visibility({
+                    type: 'fixed',
+                    offset: 80
+                  });
+                  $('.image').visibility({
+                    type: 'image',
+                    transition: 'vertical flip in',
+                    duration: 500
+                  });
+                })
+              ;
+            </script>
+            <script> // Dropdown
+                $(document)
+                  .ready(function() {
+                      console.log('AESnator :: Inicializando menú');
+                    $('.main.menu  .ui.dropdown').dropdown({
+                      on: 'hover'
+                    });
+                    $('.ui.menu a.item')
+                      .on('click', function() {
+                        $(this)
+                          .addClass('active')
+                          .siblings()
+                          .removeClass('active')
+                        ;
+                      })
+                    ;
+                  })
+                ;
+            </script>
+            <script> // Popups
+                $(document)
+                    .ready(function() {
+                        console.log('AESnator :: Inicializando popups');
+                        // .ui.flowing.basic
+                        $('.services.item')
+                          .popup({
+                            popup : $('.ui .flowing.popup'),
+                            on    : 'hover',
+                            position   : 'bottom left'
+                          })
+                        ;
+                      $('input')
+                      .popup({
+                        on: 'focus'
+                      })
+                    ;
+                    })
+                  ;
+            </script>
+            <script> // Contador
+              var contadorFuncion = new Date("Sep 13, 2019 11:00:00").getTime();
+
+              var reiniciar = setInterval(function() {
+
+                var ahora = new Date().getTime();
+
+                var distancia = contadorFuncion - ahora;
+
+                var dias = Math.floor(distancia / (1000 * 60 * 60 * 24));
+                var horas = Math.floor((distancia % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                var minutos = Math.floor((distancia % (1000 * 60 * 60)) / (1000 * 60));
+                //var segundos = Math.floor((distancia % (1000 * 60)) / 1000);
+
+                document.getElementById("final").innerHTML = dias + "d " + horas + "h "
+                + minutos + "m";
+
+                if (distancia < 0) {
+                  clearInterval(reiniciar);
+                  document.getElementById("final").innerHTML = "¡Estamos girando!"; // Cuando finaliza escribe el siguiente texto
+                }
+              }, 1000);
+            </script>
+
+        </body>
+    </html>
