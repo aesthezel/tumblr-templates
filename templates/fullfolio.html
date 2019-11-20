@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+
+        <!-- 
+        
+        AES.THEME FULLFOLIO
+        Versión 0.1
+        Iniciado el 18.11.19
+        Última edición 18.11.19
+        - x -
+        Diseñado por David Pino
+        @aesthezel - o - @aes.thezel
+        - x -
+        Componentes
+        Semantic UI 2.4.2       | semantic-ui.com
+        Font Awesome 4.7.0      | fontawesome.com
+        Skrollr                 | github.com/Prinzhorn/skrollr
+        
+        -->
+
+    <html lang="es"> 
+        <head>
+            <title>{Title}</title>
+
+            <link rel="shortcut icon" href="{Favicon}">
+            <link rel="alternate" type="application/rss+xml" href="{RSS}">
+            <!-- Temporal
+            {block:Description}<meta name="description" content="{MetaDescription}" />{/block:Description} 
+            -->
+            <link href='https://fonts.googleapis.com/css?family=Pinyon+Script' rel='stylesheet' type='text/css'>
+            <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+
+            <!-- /?\ Standard META -->
+            <meta charset="utf-8" />
+            <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+            <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+            <!-- /?\ Tumblr META -->
+            <meta name="color:background" content="#ffffff"/>
+            <meta name="color:title" content="#e5faff" />
+            <meta name="color:desc" content="#ccf5ff" /> 
+            <meta name="color:text" content="#999"/>
+            <meta name="color:link hover" content="#ddd"/>
+            <meta name="color:link" content="#aaa"/>
+            <meta name="text:banner url" content="#">
+            <meta name="text:logo url" content="#">
+            <meta name="text:link1" content="">
+            <meta name="text:link1 url" content="/">
+            <meta name="text:link2" content="">
+            <meta name="text:link2 url" content="/">
+            <meta name="text:link3" content="">
+            <meta name="text:link3 url" content="/">
+
+            <!-- /?\ Estructura -->
+            <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.css">
+            <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/components/reset.css">
+            <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/components/site.css">
+            <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/components/grid.css">
+            <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/components/loader.css">
+            <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/components/menu.css">
+            <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/components/input.css">
+            <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/components/dropdown.css">
+            <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/components/icon.css">
+            <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/components/button.css">
+            <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/components/transition.css">
+            <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/components/popup.css">
+            <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/components/dimmer.css">
+            <!-- /?\ Style -->
+            <style type="text/css">
+                body, html {
+                    //background:{color:background};
+                    width:100%;
+                    height:100%;
+                    margin:0px;
+                    color:{color:text};
+                    scroll-behavior: smooth;
+                    }
+                a {
+                    text-decoration:none;
+                    outline:0px;
+                    -moz-outline-style:none;
+                    color:{color:link};
+                    -moz-transition-duration:0.5s;
+                    -webkit-transition-duration:0.5s;
+                    -o-transition-duration:0.5s;
+                    }
+                    a:hover{
+                        color:{color:link hover};
+                        font-style:none;
+                        -moz-transition-duration:0.5s;
+                        -webkit-transition-duration:0.5s;
+                        -o-transition-duration:0.5s;
+                        }
+                img {
+                    border:0px;
+                    }
+                blockquote {
+                    padding-left:5px;
+                    border-left:2px solid;
+                    }
+                    blockquote blockquote {
+                        padding-left:5px;
+                        border-left:2px solid;
+                        }
+                .aes-title {
+                    background: conic-gradient(
+                    #00b8ff 16.666%, 
+                    #00b8ff 16.666%, 
+                    #00b8ff 33.333%, 
+                    #00b8ff 33.333%, 
+                    #00b8ff 50%, 
+                    #ffe000  50%, 
+                    #ffe000  66.666%, 
+                    #ffe000 66.666%, 
+                    #ffe000 83.333%, 
+                    #ffe000 83.333%);
+                    background-size: 100%;
+                    background-repeat: repeat;
+                    -webkit-background-clip: text;
+                    -webkit-text-fill-color: transparent; 
+                    animation: aes-title-animation-rev 1s ease forwards;
+                    cursor: pointer;
+                    }
+                .aes-title:hover {
+                  animation: aes-title-animation 1s ease forwards;
+                    }
+                @keyframes aes-title-animation {
+                  0% {
+                    background-size: 75%;
+                    background-position: 0 0;
+                  }
+                  20% {
+                    background-size: 100%;
+                    background-position: 0 0em;
+                  }
+                  100% {
+                    background-size: 200%;
+                    background-position: 0em 0em;
+                  }
+                }
+                @keyframes aes-title-animation-rev {
+                      0% {
+                        background-size: 200%;
+                        background-position: 0em 0em;
+                      }
+                      20% {
+                        background-size: 75%;
+                        background-position: 0 0em;
+                      }
+                      100% {
+                        background-size: 100%;
+                        background-position: 0 0;
+                      }
+                    }
+                /* full width/height container */
+                #slides-container {
+                    width: 100%;
+                    height: 100%;
+                    overflow: hidden;
+                    }
+                 
+                /* double the height/width of a viewport */
+                #slides {
+                    width: 200%;
+                    height: 200%;
+                    position: fixed;
+                    top: 0;
+                    left: 0;
+                    }
+                    .s-desc {
+                    position: absolute;
+                    bottom: 5%;
+                    right: 5%;
+                    text-align: right;
+                    color: #fff;
+                    }
+                    .slide {
+                        position:absolute;
+                        top:0;  
+                        left:0;
+                        width:50%;
+                        height:50%;
+                        }
+                    .slide h1 {
+                    font-weight: 400px;
+                    font-size: 5em;
+                    width: 6.69em;
+                    line-height: 0.9em;
+                    margin-left: auto;
+                    margin-right: auto;
+                    margin-top: 1.5em;
+                    }
+                    .slide h2 {
+                    font-size: 1.33em;
+                    line-height: 0.3em;
+                    margin-left: auto;
+                    margin-right: auto;
+                    margin-top: 1em;
+                    }
+                    #s-uno {
+                        background-color: #696969;
+                        //background: url('https://w.wallhaven.cc/full/g8/wallhaven-g89kgq.jpg') no-repeat center center;
+                        background-size: cover;
+                        }
+                    #s-dos {
+                        background-color: #969696;
+                        //background: url('https://w.wallhaven.cc/full/01/wallhaven-01y29w.jpg') no-repeat center center;
+                        background-size: cover;
+                            -webkit-transform: translate(100%,0%);
+                            -ms-transform: translate(100%,0%);
+                            transform: translate(100%,0%);
+                        }
+                    #s-tre {
+                        background-color: #696969;
+                        //background: url('https://w.wallhaven.cc/full/0w/wallhaven-0wk9dp.jpg') no-repeat center center;
+                        background-size: cover;
+                            -webkit-transform: translate(200%,0%);
+                            -ms-transform: translate(200%,0%);
+                            transform: translate(200%,0%);
+                        }
+                    #s-tre .s-desc {
+                        left: 5%;
+                        right: auto;
+                        color: #47373f;
+                    }
+                    #s-qua {
+                        background-color: #969696;
+                        //background: url('https://w.wallhaven.cc/full/lq/wallhaven-lqjwzy.jpg') no-repeat center center;
+                        background-size: cover;
+                        -webkit-transform: translate(200%,100%);
+                        -ms-transform: translate(200%,100%);
+                        transform: translate(200%,100%);
+                        }
+                    #s-qua .s-desc {
+                        right: auto;
+                        left: 5%;
+                        top: 5%;
+                        bottom: auto;
+                        color: #47373f;
+                    }
+                #indicator {
+                    position:absolute;
+                    left:0;
+                    top: 0;
+                    height:600%;
+                    width: 100px;
+                    opacity: 75%;
+                    -webkit-box-shadow: 10px 0px 10px -2px rgba(0,0,0,0.35);
+                    -moz-box-shadow: 10px 0px 10px -2px rgba(0,0,0,0.35);
+                    box-shadow: 10px 0px 10px -2px rgba(0,0,0,0.35);
+                    }
+                    .pag {
+                    position : relative;
+                    text-align: center;
+                    font-weight: bold;
+                    }
+                    .pos {
+                        height: 25%;
+                        width: 100%;
+                    }
+                    .c-uno {
+                        background-color: #00b8ff;
+                    }
+                    .c-dos {
+                        background-color: #ffe000;
+                    }
+                    .c-tre {
+                        background-color: #ff000f;
+                    }
+                    .c-qua {
+                        background-color: #bd00ff;
+                    }
+                .main.container {
+                    margin-top: 2em;
+                    }
+                .main.menu {
+                    margin-top: 1em;
+                    border-radius: 0;
+                    border: none;
+                    box-shadow: none;
+                    transition:
+                    box-shadow 0.7s ease,
+                    padding 0.5s ease;
+                    }   
+                    .main.menu .mcolor.commit { /* Verde claro #4ee49e, Verde medio #1dbf73, Verde oscuro #148550 */
+                    background-image: -webkit-linear-gradient(left, #4ee49e, #1dbf73,  #148550);
+                    background-image:    -moz-linear-gradient(left, #4ee49e, #1dbf73,  #148550);
+                    background-image:     -ms-linear-gradient(left, #4ee49e, #1dbf73,  #148550);
+                    background-image:      -o-linear-gradient(left, #4ee49e, #1dbf73,  #148550);
+                    background-image:     linear-gradient(to right, #4ee49e, #1dbf73,  #148550);
+                    color:transparent;
+                    -webkit-background-clip: text;
+                    background-clip: text;
+                    font-weight: bold;
+                    }
+                    .main.menu .mcolor.commit .icon {
+                    margin-left: 0.21em;
+                    }
+                    .main.menu .item img.logo {
+                    margin-right: 0.33em;
+                    }
+                .overlay {
+                    float: left;
+                    padding-top: 3.33em;
+                    margin: 0em 3em 1em 0em;
+                    }
+                .overlay .menu {
+                    position: relative;
+                    left: 0;
+                    transition: left 0.7s ease;
+                    }
+                .main.menu.fixed {
+                    background-color: #FFFFFF;
+                    border: 1px solid #DDD;
+                    box-shadow: 0px 5px 6px rgba(0, 0, 0, 0.3);
+                    }
+                .overlay.fixed .menu {
+                    left: 777px;
+                    }
+                .ui.footer.segment {
+                    height: 17%;
+                    margin: 0em 0em 0em;
+                    padding: 5em 0em;
+                    }
+                    ::-webkit-scrollbar {
+                        display: none;
+                    }
+                {CustomCSS}
+            </style>
+        </head>
+
+        <body>
+
+            <div id="slides-container">
+                <div id="slides"
+                data-0="transform:translate(0%,0%);"
+                data-150p="transform:translate(-50%,0%);"
+                data-200p=""
+                data-300p="transform:translate(-100%,0%);"
+                data-350p=""
+                data-450p="transform:translate(-100%,-50%);">
+                    <div id="s-uno" class="slide">
+                            <div class="s-desc"
+                            data-40p="opacity: 1; transform:translate(0px,0px);"
+                            data-90p="opacity: 0; transform:translate(-100%, 0px);"
+                            data-anchor-target="#indicator"
+                            >   
+                            <h1 class="aes-title">David A. Pino</h1>
+                            <h2>Artista conceptual, programador y diseñador web</h2>
+                        </div>
+                    </div>
+                    <div id="s-dos" class="slide">
+                        
+                    </div>
+                    <div id="s-tre" class="slide">
+                        
+                    </div>
+                    <div id="s-qua" class="slide">
+                        
+                    </div>
+                </div>
+            </div>
+
+            <div id="indicator">
+                <div class="pos c-uno"></div>
+                <div class="pos c-dos"></div>
+                <div class="pos c-tre"></div>
+                <div class="pos c-qua"></div>
+            </div>
+
+            <!-- /?\ Pie de página -->
+            <div class="ui inverted vertical footer segment">
+                <div class="ui center aligned container">
+              <div class="ui stackable inverted divided grid">
+                <div class="three wide column">
+                  <h4 class="ui inverted header">Contacto</h4>
+                  <div class="ui inverted link list">
+                    <a href="#" class="item">Facebook</a>
+                    <a href="#" class="item">Twitter</a>
+                    <a href="#" class="item">LinkedIn</a>
+                    <a href="#" class="item">Fiverr</a>
+                    <a href="#" class="item">Telegram</a>
+                  </div>
+                </div>
+                <div class="three wide column">
+                  <h4 class="ui inverted header">Páginas</h4>
+                  <div class="ui inverted link list">
+                    <a href="#" class="item">Próximamente</a>
+                  </div>
+                </div>
+                <div class="three wide column">
+                  <h4 class="ui inverted header">Aliados</h4>
+                  <div class="ui inverted link list">
+                    <a href="#" class="item">Studio Pineseed</a>
+                    <a href="#" class="item">Quasar Projects</a>
+                  </div>
+                </div>
+                <div class="seven wide column">
+                  <h4 class="ui inverted header">Galería</h4>
+                  <p>En construcción</p>
+                </div>
+              </div>
+              <div class="ui inverted section divider"></div>
+              <img src="{PortraitURL-128}" class="ui centered mini image">
+              <h5 class="ui inverted header">
+              <content><i class="copyright icon"></i><br>2012 - 2019</content>
+              <div class="sub header">
+              Derechos reservados a David Pino<br>
+              Puede que este sitio contenga contenido de terceros<br>            
+              </div>
+              </h5>
+              <div class="ui horizontal inverted small divided link list">
+                <a class="item" href="#">Archivo</a>
+                <a class="item" href="#">RSS</a>
+                <a class="item" href="#">Terminos & Condiciones</a>
+                <a class="item" href="#">Política de Privacidad</a>
+              </div>
+            </div>
+          </div>
+
+            <!-- /?\ JS -->
+            <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha384-tsQFqpEReu7ZLhBV2VZlAu7zcOV+rXbYlF2cqB8txI/8aZajjp4Bqd+V6D5IgvKT" crossorigin="anonymous"></script>
+            <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.js"></script>
+            <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/components/dropdown.js"></script>
+            <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/components/transition.js"></script>
+            <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/components/popup.js"></script>
+            <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/components/visibility.js"></script>
+            <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/components/dimmer.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/components/sticky.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/skrollr@0.6.26/dist/skrollr.min.js"></script>
+            <!-- /?\ Scripts personalizados -->
+            <script type="text/javascript">
+                var s = skrollr.init();
+            </script>
+            <script> // Menú
+              $(document)
+                .ready(function() {
+                  $('.main.menu').visibility({
+                    type: 'fixed'
+                  });
+                  $('.overlay').visibility({
+                    type: 'fixed',
+                    offset: 80
+                  });
+                  $('.image').visibility({
+                    type: 'image',
+                    transition: 'vertical flip in',
+                    duration: 500
+                  });
+                })
+              ;
+            </script>
+            <script> // Dropdown
+                $(document)
+                  .ready(function() {
+                      console.log('AESnator :: Inicializando menú');
+                    $('.main.menu  .ui.dropdown').dropdown({
+                      on: 'hover'
+                    });
+                    $('.ui.menu a.item')
+                      .on('click', function() {
+                        $(this)
+                          .addClass('active')
+                          .siblings()
+                          .removeClass('active')
+                        ;
+                      })
+                    ;
+                  })
+                ;
+            </script>
+            <script> // Popups
+                $(document)
+                    .ready(function() {
+                        console.log('AESnator :: Inicializando popups');
+                        // .ui.flowing.basic
+                        $('.services.item')
+                          .popup({
+                            popup : $('.ui .flowing.popup'),
+                            on    : 'hover',
+                            position   : 'bottom left'
+                          })
+                        ;
+                      $('input')
+                      .popup({
+                        on: 'focus'
+                      })
+                    ;
+                    })
+                  ;
+            </script>
+            <script> // Contador
+              var contadorFuncion = new Date("Sep 13, 2019 11:00:00").getTime();
+
+              var reiniciar = setInterval(function() {
+
+                var ahora = new Date().getTime();
+
+                var distancia = contadorFuncion - ahora;
+
+                var dias = Math.floor(distancia / (1000 * 60 * 60 * 24));
+                var horas = Math.floor((distancia % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                var minutos = Math.floor((distancia % (1000 * 60 * 60)) / (1000 * 60));
+                //var segundos = Math.floor((distancia % (1000 * 60)) / 1000);
+
+                document.getElementById("final").innerHTML = dias + "d " + horas + "h "
+                + minutos + "m";
+
+                if (distancia < 0) {
+                  clearInterval(reiniciar);
+                  document.getElementById("final").innerHTML = "¡Estamos girando!"; // Cuando finaliza escribe el siguiente texto
+                }
+              }, 1000);
+            </script>
+
+        </body>
+    </html>
